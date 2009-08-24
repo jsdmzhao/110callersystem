@@ -1,0 +1,5 @@
+1.commonapp:通用组件
+2.dispatching:处警调度
+3.responding:接警
+4.configmanage：配置管理
+5.userprofile:用户与权限管理

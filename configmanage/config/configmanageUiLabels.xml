@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="configmanageApplication">
+        <value xml:lang="en">configmanage Application</value>
+    </property>
+    <property key="configmanageCompanyName">
+        <value xml:lang="en">OFBiz: configmanage</value>
+    </property>
+    <property key="configmanageCompanySubtitle">
+        <value xml:lang="en">Part of the Open For Business Family of Open Source Software</value>
+    </property>
+    <property key="configmanageViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+    </property>
+</resource>

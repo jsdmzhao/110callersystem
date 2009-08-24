@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="testApplication">
+        <value xml:lang="en">test Application</value>
+        <value xml:lang="zh">test应用程</value>
+    </property>
+    <property key="testCompanyName">
+        <value xml:lang="en">OFBiz: test</value>
+    </property>
+    <property key="testCompanySubtitle">
+        <value xml:lang="en">Part of the Open For Business Family of Open Source Software</value>
+        <value xml:lang="zh">开软件OFBiz的组部分</value>
+    </property>
+    <property key="testViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="zh">不允许你浏览这个页面。</value>
+    </property>
+</resource>

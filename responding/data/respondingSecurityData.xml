@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the responding Component." permissionId="RESPONDING_VIEW"/>
+    <SecurityPermission description="Create operations in the responding Component." permissionId="RESPONDING_CREATE"/>
+    <SecurityPermission description="Update operations in the responding Component." permissionId="RESPONDING_UPDATE"/>
+    <SecurityPermission description="Delete operations in the responding Component." permissionId="RESPONDING_DELETE"/>
+    <SecurityPermission description="ALL operations in the responding Component." permissionId="RESPONDING_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="RESPONDING_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="RESPONDING_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="RESPONDING_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="RESPONDING_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="RESPONDING_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="RESPONDING_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="RESPONDING_ADMIN"/>
+</entity-engine-xml>
