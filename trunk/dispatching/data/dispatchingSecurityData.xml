@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the dispatching Component." permissionId="DISPATCHING_VIEW"/>
+    <SecurityPermission description="Create operations in the dispatching Component." permissionId="DISPATCHING_CREATE"/>
+    <SecurityPermission description="Update operations in the dispatching Component." permissionId="DISPATCHING_UPDATE"/>
+    <SecurityPermission description="Delete operations in the dispatching Component." permissionId="DISPATCHING_DELETE"/>
+    <SecurityPermission description="ALL operations in the dispatching Component." permissionId="DISPATCHING_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="DISPATCHING_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DISPATCHING_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DISPATCHING_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DISPATCHING_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DISPATCHING_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="DISPATCHING_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="DISPATCHING_ADMIN"/>
+</entity-engine-xml>

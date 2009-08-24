@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the commonapp Component." permissionId="COMMONAPP_VIEW"/>
+    <SecurityPermission description="Create operations in the commonapp Component." permissionId="COMMONAPP_CREATE"/>
+    <SecurityPermission description="Update operations in the commonapp Component." permissionId="COMMONAPP_UPDATE"/>
+    <SecurityPermission description="Delete operations in the commonapp Component." permissionId="COMMONAPP_DELETE"/>
+    <SecurityPermission description="ALL operations in the commonapp Component." permissionId="COMMONAPP_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="COMMONAPP_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="COMMONAPP_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="COMMONAPP_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="COMMONAPP_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="COMMONAPP_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="COMMONAPP_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="COMMONAPP_ADMIN"/>
+</entity-engine-xml>

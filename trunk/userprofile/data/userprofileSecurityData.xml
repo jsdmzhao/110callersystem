@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the userprofile Component." permissionId="USERPROFILE_VIEW"/>
+    <SecurityPermission description="Create operations in the userprofile Component." permissionId="USERPROFILE_CREATE"/>
+    <SecurityPermission description="Update operations in the userprofile Component." permissionId="USERPROFILE_UPDATE"/>
+    <SecurityPermission description="Delete operations in the userprofile Component." permissionId="USERPROFILE_DELETE"/>
+    <SecurityPermission description="ALL operations in the userprofile Component." permissionId="USERPROFILE_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="USERPROFILE_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="USERPROFILE_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="USERPROFILE_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="USERPROFILE_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="USERPROFILE_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="USERPROFILE_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="USERPROFILE_ADMIN"/>
+</entity-engine-xml>
