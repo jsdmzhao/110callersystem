@@ -1,0 +1,27 @@
+﻿Debugging (or running) OFBiz in Eclipse
+
+    * Select OFBiz project, right-click on it -> Run As -> Run ... (alike for Debug)
+    * Select Java Application and click on New
+    * Set Run configuration name to OFBiz
+          o Main tab:
+                + Project: OFBiz
+                + Main class: org.ofbiz.base.start.Start
+                + If you need it (to trace a framework bug in the 1st loaded class) you may use the "Stop in Main" Option
+          o Arguments:
+                + VM arguments: -Xms(minValue)M -Xmx(maxValue)M  (typically minValue = 128, maxValue = 512, more is better of course) -Duser.language=en  
+                      # In some case (Suse  SL 10.1 at least) it's better to not define any VM arguments but let the defaults values.
+                + Working directory: Use default working directory
+          o Classpath
+                + Bootstrap Entries: JRE System Library
+                + User Entries: ofbiz.jar from OFBiz project
+                      # Don't forget to remove the entry "ofbiz (default classpath)" else you may have a message "Can't find bundle for base name cache, locale ..."
+          o Source tab
+                + Click Add Projects... (buttons on the right)
+                + Select the ofbiz project
+          o Environment
+                + Add environment variable LC_ALL=C (Optional, Linux only)
+    * Click on Apply and Run (or Debug)
+
+Thanks to Peter Goron
+
+Note that when doing development work, you will have to stop OFBiz, run an Ant build and re-start. Because this method treats OFBiz as a plain Java up, you don't have any automatic classloading as you might be used to when using Eclipse-WTP and developing webapps.

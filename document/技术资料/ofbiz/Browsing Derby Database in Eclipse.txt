@@ -1,0 +1,1 @@
+﻿http://docs.ofbiz.org/display/OFBIZ/Running+and+Debugging+OFBiz+in+Eclipse#RunningandDebuggingOFBizinEclipse-DerbyInEclipse
