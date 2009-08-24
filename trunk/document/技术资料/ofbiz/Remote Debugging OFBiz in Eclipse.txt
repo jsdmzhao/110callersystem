@@ -1,0 +1,34 @@
+﻿Remote Debugging OFBiz in Eclipse
+This is the official recommended way for debugging OFBiz. It's fine. Personnaly (Jacques Le Roux) I use also the second method below Debugging (or running) OFBiz in Eclipse because I find it convenient (but I'm certainly biased having used such tools for a pretty long time now). For instance, it's really helpful when it comes to debug the framework java code. When someone has screwed up the framework java code (it rarely happens but Adam is able to do it fromt time to time ;o) and you can't load OFBiz. Then it's an easy way to debug OFBiz using inside debugging. Though using the remote debuggind technique, you may also suspend the JVM through the command line options at start up. Effectively the JVM boots, stops and waits for a debugger to connect and then it continues so you can still use remote debugging. Just put suspend=y in the start options alongside the socket and ports settings (thanks Ray)
+
+OFBiz in Eclipse|#debuggingInEclipse]
+Step 1: Run OFBiz in debug mode
+
+Normally we start OFBiz with the command line
+
+%JAVA_HOME%\bin\java -jar ofbiz.jar
+
+To start in debug mode use the command line
+
+%JAVA_HOME%\bin\java \-Xdebug \-Xnoagent \-Djava.compiler=NONE \-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8091 \-jar ofbiz.jar
+
+This changed command line instructs java to run in debug mode listening for a socket connection on port 8091 for a debugger to connect. You can change the port number to any port not otherwise being used.
+Step 2: Connect to OFBiz with Eclipse as a Debugger
+
+Before connecting you have to create a new debug configuration.
+
+    * In Eclipse choose Run->Debug... from the menu. A Debug window should pop up.
+    * Select Remote Java Application from the tree on the left.
+    * Click New (button on the bottom left).
+    * Type a name at the top (OFBiz, perhaps?)
+    * On the Connect tab
+          o Pick ofbiz for the project
+          o Select Standard (Socket Attach) for Connection Type
+          o Type localhost for host
+          o Type 8091 (or whatever port you chose) for port
+    * On the Source tab
+          o Click Add Projects... (buttons on the right)
+          o Select the ofbiz project
+    * Click Apply If you have OFBiz running debug (Step 1 above) you can start debugging by clicking Debug (on the bottom) now.
+      You know that you are connected when you see a start/stop button in the debug perspective of Eclipse.
+
