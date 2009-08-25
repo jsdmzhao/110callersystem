@@ -35,5 +35,6 @@
         server="default-server"
         location="webapp/commonapp"
         base-permission="OFBTOOLS,COMMONAPP"
+        app-bar-display="false"
         mount-point="/commonapp"/>
 </ofbiz-component>
