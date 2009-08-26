@@ -17,7 +17,7 @@
                 <set field="applicationTitle" value="${uiLabelMap.commonappApplication}" global="true"/>
             </actions>
             <widgets>
-                <include-screen name="GlobalDecorator" location="component://common/widget/CommonScreens.xml"/>
+                <include-screen name="jQueryDecorator" location="component://commonapp/widget/CommonScreens.xml"/>
             </widgets>
         </section>
     </screen>
@@ -43,6 +43,90 @@
                         </section>
                     </decorator-section>
                 </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="jQueryDecorator">
+        <section>
+            <actions>
+                 <!-- The default (global) java scripts -->
+                <set field="layoutSettings.javaScripts[+0]" value="/win110/js/jquery/jquery-1.3.2.js" global="true"/>
+                <set field="layoutSettings.javaScripts[+0]" value="/win110/js/jquery/ui/jquery-ui-1.7.2.custom.min.js" global="true"/>
+                <set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl" default-value="main" global="true"/>
+                <property-map resource="general" map-name="generalProperties" global="true"/>
+                <set field="defaultVisualThemeId" from-field="generalProperties.defaultVisualThemeId" default-value="SMOOTH_FEATHER"/>
+                <set field="visualThemeId"  from-field="userPreferences.VISUAL_THEME" default-value="${defaultVisualThemeId}" global="true"/>
+                <service service-name="getVisualThemeResources">
+                    <field-map field-name="visualThemeId"/>
+                    <field-map field-name="themeResources" from-field="layoutSettings"/>
+                </service>
+                <set field="layoutSettings" from-field="themeResources" default-value="${layoutSettings}" global="true"/>
+                <set field="headerTemplateLocation" from-field="layoutSettings.VT_HDR_TMPLT_LOC[0]" default-value="component://common/webcommon/includes/header.ftl"/>
+                <set field="footerTemplateLocation" from-field="layoutSettings.VT_FTR_TMPLT_LOC[0]" default-value="component://common/webcommon/includes/footer.ftl"/>
+                <set field="appbarTemplateLocation" from-field="layoutSettings.VT_NAV_TMPLT_LOC[0]" default-value="component://common/webcommon/includes/appbar.ftl"/>
+                <set field="messagesTemplateLocation" from-field="layoutSettings.VT_MSG_TMPLT_LOC[0]" default-value="component://common/webcommon/includes/messages.ftl"/>
+            </actions>
+              <widgets>
+                <!-- render header -->
+                <platform-specific><html><html-template location="${headerTemplateLocation}"/></html></platform-specific>
+                <!-- render appbar -->
+                <platform-specific><html><html-template location="${appbarTemplateLocation}"/></html></platform-specific>
+
+                <!-- render appheader: both menu widget style and ftl template style menus are supported-->
+                <section>
+                    <condition>
+                        <not><if-empty field="userLogin"/></not>
+                    </condition>
+                    <widgets>
+                        <section>
+                            <condition>
+                                <if-empty field="applicationMenuName"/>
+                            </condition>
+                            <widgets>
+                                <platform-specific><html><html-template location="${appheaderTemplate}"/></html></platform-specific>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="apptitle">${parameters.applicationTitle}</label>
+                                <include-menu name="${applicationMenuName}" location="${applicationMenuLocation}"/>
+                            </fail-widgets>
+                        </section>
+                    </widgets>
+                    <fail-widgets>
+                        <include-menu name="CommonAppBarMenu" location="component://common/widget/CommonMenus.xml"/>
+                    </fail-widgets>
+                </section>
+
+                <!-- render messages -->
+                <platform-specific><html><html-template location="${messagesTemplateLocation}"/></html></platform-specific>
+                <container style="contentarea">
+                    <!-- may be used by sight disabled persons to skip directly to content area-->
+                    <decorator-section-include name="pre-body"/>
+                    <!-- Please don't change the column-container id : it's referenced to allow skipping navigation-->
+                    <container id="column-container">
+                        <!-- by default will render left-bar only if leftbarScreen value not empty -->
+                        <include-screen name="${leftbarScreenName}" location="${leftbarScreenLocation}"/>
+
+                        <container id="content-main-section" style="${MainColumnStyle}">
+                            <!-- render messages -->
+                            <decorator-section-include name="body"/>
+                        </container>
+                        <container style="clear"></container>
+                    </container>
+                </container>
+
+                <!-- render footer -->
+                <section>
+                    <condition>
+                        <if-empty field="applicationFooterTemplate"/>
+                    </condition>
+                    <widgets>
+                        <platform-specific><html><html-template location="${footerTemplateLocation}"/></html></platform-specific>
+                    </widgets>
+                    <fail-widgets>
+                         <platform-specific><html><html-template location="${applicationFooterTemplate}"/></html></platform-specific>
+                    </fail-widgets>
+                </section>
             </widgets>
         </section>
     </screen>
