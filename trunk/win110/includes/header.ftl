@@ -25,8 +25,9 @@ under the License.
 </#if>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="${docLangAttr}" lang="${docLangAttr}" dir="${langDir}">
 <head>
+    <#include 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Language" content="zh" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="pragma" content="no-cache" />
@@ -51,7 +52,7 @@ under the License.
       <#assign shortcutIcon = layoutSettings.VT_SHORTCUT_ICON.get(0)/>
     </#if>
     <#if shortcutIcon?has_content>
-    <link rel="shortcut icon" href="<@ofbizContentUrl>${StringUtil.wrapString(shortcutIcon)}</@ofbizContentUrl>" />
+        <link rel="shortcut icon" href="<@ofbizContentUrl>${StringUtil.wrapString(shortcutIcon)}</@ofbizContentUrl>" />
     </#if>
     <#if layoutSettings.styleSheets?has_content>
         <#list layoutSettings.styleSheets as styleSheet>
@@ -104,33 +105,24 @@ under the License.
 <div id="wrap">
   <div id="header">
     <div id="logo"></div>
-    <div id="shelf"></div>
     <div id="controls">
-            <span id="prefBtn">
-                <a href="#" class="contracted">${uiLabelMap.CommonPreferences}</a>
-                <div id="preferences" style="display:none">
-                    <a href="#" rel="<@ofbizUrl>LookupLocales</@ofbizUrl>" id="language">${uiLabelMap.CommonLanguageTitle} - ${locale.getDisplayName(locale)}</a>
-                    <a href="#" rel="<@ofbizUrl>LookupTimezones</@ofbizUrl>" id="timezone">${nowTimestamp?datetime?string.short} - ${timeZone.getDisplayName(timeZone.useDaylightTime(), Static["java.util.TimeZone"].LONG, locale)}</a>
-                    <a href="#" rel="<@ofbizUrl>LookupVisualThemes</@ofbizUrl>" id="theme">${uiLabelMap.CommonVisualThemes}</a>
-                </div>
-            </span>
-            <span>
-            <#if person?has_content>
-              ${uiLabelMap.CommonWelcome},  ${person.firstName?if_exists} ${person.lastName?if_exists} ( ${userLogin.userLoginId} )
-            <#elseif partyGroup?has_content>
-              ${uiLabelMap.CommonWelcome},  ${partyGroup.groupName?if_exists} ( ${userLogin.userLoginId} )
-            <#else>
-              ${uiLabelMap.CommonWelcome}
-            </#if>
-            </span>
-            <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
-            <#if webSiteId?exists && requestAttributes._CURRENT_VIEW_?exists>
-              <#include "component://common/webcommon/includes/helplink.ftl" />
-              <#if helpContent?has_content ||  helpTopic == "navigateHelp" || (parameters.portalPageId?exists && helpTopic == "MYPORTAL_showPortalP")>
-                <span><a href="javascript:lookup_popup2('showHelp?helpTopic=${helpTopic}&portalPageId=${parameters.portalPageId?if_exists}','help' ,500,500);">${uiLabelMap.CommonHelp}</a></span>
-              <#else>
-                <span><a href="${helpUrlPrefix}${helpUrlTopic}${helpUrlSuffix}" target="_blank">${uiLabelMap.CommonHelp}</a></span>
-              </#if>
-           </#if>
-        </div>
+        <span id="prefBtn">
+            <a href="#" class="contracted">${uiLabelMap.CommonPreferences}</a>
+            <div id="preferences" style="display:none">
+                <a href="#" rel="<@ofbizUrl>LookupLocales</@ofbizUrl>" id="language">${uiLabelMap.CommonLanguageTitle} - ${locale.getDisplayName(locale)}</a>
+                <a href="#" rel="<@ofbizUrl>LookupTimezones</@ofbizUrl>" id="timezone">${nowTimestamp?datetime?string.short} - ${timeZone.getDisplayName(timeZone.useDaylightTime(), Static["java.util.TimeZone"].LONG, locale)}</a>
+                <a href="#" rel="<@ofbizUrl>LookupVisualThemes</@ofbizUrl>" id="theme">${uiLabelMap.CommonVisualThemes}</a>
+            </div>
+        </span>
+        <span>
+        <#if person?has_content>
+          ${uiLabelMap.CommonWelcome},  ${person.firstName?if_exists} ${person.lastName?if_exists} ( ${userLogin.userLoginId} )
+        <#elseif partyGroup?has_content>
+          ${uiLabelMap.CommonWelcome},  ${partyGroup.groupName?if_exists} ( ${userLogin.userLoginId} )
+        <#else>
+          ${uiLabelMap.CommonWelcome}
+        </#if>
+        </span>
+        <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
     </div>
+  </div>
