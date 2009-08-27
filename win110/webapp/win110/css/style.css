@@ -18,154 +18,6 @@ specific language governing permissions and limitations
 under the License.
 ***********************************************/
 @import url("../js/jquery/ui/css/custom-theme/jquery-ui-1.7.2.custom.css");
-
-/***********************************************
-Reset
-***********************************************/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    border:0; 
-    margin:0; 
-    outline:0; 
-    padding:0; 
-    background:transparent; 
-    vertical-align: baseline;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content:''; 
-    content: none;
-}
-
-a, address, body, caption, cite, code, dfn, em, strong, th, var {
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-}
-
-a img {
-    border: none;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/***********************************************
-General Styles
-***********************************************/
-body {
-    background:url(../js/jquery/ui/css/custom-theme/images/ui-bg_glass_65_ffffff_1x400.png) top left repeat-y; 
-    color: #000;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size:.75em;
-    line-height:1.5em;
-}
-
-img {display: inline-block; vertical-align: bottom;}
-
-h1,h2,h3,h4,h5,h6,strong,b,dt,th {font-weight: 700;}
-address,cite,em,i,caption,dfn,var {font-style: italic;}
-
-h1 {margin: 0 0 0.75em; font-size: 2em;}
-h2 {margin: 0 0 1em; font-size: 1.5em;}
-h3 {margin: 0 0 1.286em; font-size: 1.167em;}
-h4 {margin: 0 0 1.5em; font-size: 1em;}
-h5 {margin: 0 0 1.8em; font-size: .834em;}
-h6 {margin: 0 0 2em; font-size: .75em;}
-
-p,ul,ol,dl,blockquote,pre {margin: 0 0 1.5em;}
-
-li ul,li ol {margin: 0;}
-ul {list-style: none;}
-ol {list-style: outside decimal;}
-li {margin: 0 0 0 2em;}
-dd {padding-left: 1.5em;}
-blockquote {padding: 0 1.5em;}
-
-a {text-decoration: none; color:#555}
-a:hover {text-decoration: none; color:#111;}
-abbr,acronym {border-bottom: 1px dotted; cursor: help;}
-del {text-decoration: line-through;}
-ins {text-decoration: overline;}
-sub {font-size: .834em; line-height: 1em; vertical-align: sub;}
-sup {font-size: .834em; line-height: 1em; vertical-align: super;}
-
-tt,code,kbd,samp,pre {font-size: 1em; font-family: "Courier New", Courier, monospace;}
-
-/***********************************************
-Tables
-***********************************************/
-table {border-collapse: collapse; border-spacing: 0; margin: 0 0 1.5em;}
-caption {text-align: left;}
-th, td {padding: .25em .5em; color:#555;}
-tbody td, tbody th {}
-tfoot {font-style: italic;}
-
-/***********************************************
-Forms
-***********************************************/
-fieldset {clear: both;}
-legend {padding: 0 0 1.286em; font-size: 1.167em; font-weight: 700;}
-fieldset fieldset legend {padding: 0 0 1.5em; font-size: 1em;}
-* html legend {margin-left: -7px;}
-*+html legend {margin-left: -7px;}
-
-form .field, form .buttons {clear: both; margin: 0 0 1.5em;}
-form .field label {display: block;}
-form ul.fields li {list-style-type: none; margin: 0;}
-form ul.inline li, form ul.inline label {display: inline;}
-form ul.inline li {padding: 0 .75em 0 0;}
-
-input.radio, input.checkbox {vertical-align: top;}
-label, button, input.submit, input.image {cursor: pointer;}
-* html input.radio, * html input.checkbox {vertical-align: middle;}
-*+html input.radio, *+html input.checkbox {vertical-align: middle;}
-
-textarea {overflow: auto;}
-
-* html button {margin: 0 .34em 0 0;}
-*+html button {margin: 0 .34em 0 0;}
-
-form.horizontal .field {padding-left: 150px;}
-form.horizontal .field label {display: inline; float: left; width: 140px; margin-left: -150px;}
-
-/***********************************************
-Generic Classes
-***********************************************/
-img.left {display: inline; float: left; margin: 0 1.5em .75em 0;}
-img.right {display: inline; float: right; margin: 0 0 .75em .75em;}
-
-.whitearea { background-color: #FFFFFF; }
-.blackarea { background-color: #000000; }
-
-.visible { height: auto; visibility: visible; }
-.hidden { height: 0; display: none; }
-
-.align-float { float: right; }
-.align-text { text-align: right;}
-.align-top { vertical-align: top; }
-.centered { text-align: center; }
-
 /***********************************************
 Layout
 ***********************************************/
@@ -181,35 +33,15 @@ body > #wrap {height: auto; min-height: 100%;}
     width:expression(document.body.clientWidth < 922? "920px" : document.body.clientWidth > 1982? "1980px" : "auto");
 }
 
-#header {
-    background:url(../js/jquery/ui/css/custom-theme/images/ui-bg_glass_55_fbf9ee_1x400.png) top left repeat-x;
-    height:80px;
-    padding:15px 0 0px 0;
+#header{
+	display:block;
+	
+	
 }
 
-#logo {
-    background:transparent;
-    height:43px;
-    left:5px;
-    position:absolute;
-    top:2px;
-    width:238px;
-    z-index:8000;
-    /*background:url(../images/logo.gif) top left no-repeat;*/
-}
-
-
-
-#main {
-    clear:both;
-    padding:0 0 20px 0;
-    margin: 0px 0px 0px 220px;
-}
-
-.contentarea {
-    padding:0 0 20px 0;
-    margin: 0px 0px 0px 220px;
-} 
+#header span{
+	float: left;
+	}
 
 #footer {
     background:url(../js/jquery/ui/css/custom-theme/images/ui-bg_glass_65_ffffff_1x400.png) top left repeat-y;

@@ -24,9 +24,9 @@ under the License.
 <#assign contextPath = request.getContextPath()>
 <#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "secondary")>
 
-<#if userLogin?has_content>
-  <ul>
+<#if displayApps?has_content>
   <h4>${uiLabelMap.CommonSecondaryApps}</h4>
+  <ul>
     <#list displayApps as display>
       <#assign thisApp = display.getContextRoot()>
       <#assign permission = true>
@@ -38,7 +38,7 @@ under the License.
           <#assign permission = false>
         </#if>
       </#list>
-      <#if permission == true>
+      <#if permission == false>
         <#if thisApp == contextPath || contextPath + "/" == thisApp>
           <#assign selected = true>
         </#if>
