@@ -34,6 +34,6 @@
         title="dispatching"
         server="default-server"
         location="webapp/dpweb"
-        base-permission="OFBTOOLS,DISPATCHING"
+        base-permission="NONE"
         mount-point="/dpweb"/>
 </ofbiz-component>

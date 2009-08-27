@@ -29,17 +29,14 @@
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="prebody">
+                    	<label text="pre body"></label>
+                    </decorator-section>
                     <decorator-section name="body">
                         <section>
-                            <condition>
-                                <if-has-permission permission="COMMONAPP" action="_VIEW"/>
-                            </condition>
                             <widgets>
                                 <decorator-section-include name="body"/>
                             </widgets>
-                            <fail-widgets>
-                                <label style="h3">${uiLabelMap.commonappViewPermissionError}</label>
-                            </fail-widgets>
                         </section>
                     </decorator-section>
                 </decorator-screen>
@@ -56,7 +53,7 @@
                 <set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl" default-value="main" global="true"/>
                 <property-map resource="general" map-name="generalProperties" global="true"/>
                 <set field="defaultVisualThemeId" from-field="generalProperties.defaultVisualThemeId" default-value="SMOOTH_FEATHER"/>
-                <set field="visualThemeId"  from-field="userPreferences.VISUAL_THEME" default-value="${defaultVisualThemeId}" global="true"/>
+                <set field="visualThemeId"  value="WIN_110" global="true"/>
                 <service service-name="getVisualThemeResources">
                     <field-map field-name="visualThemeId"/>
                     <field-map field-name="themeResources" from-field="layoutSettings"/>
@@ -75,9 +72,6 @@
 
                 <!-- render appheader: both menu widget style and ftl template style menus are supported-->
                 <section>
-                    <condition>
-                        <not><if-empty field="userLogin"/></not>
-                    </condition>
                     <widgets>
                         <section>
                             <condition>
@@ -92,12 +86,8 @@
                             </fail-widgets>
                         </section>
                     </widgets>
-                    <fail-widgets>
-                        <include-menu name="CommonAppBarMenu" location="component://common/widget/CommonMenus.xml"/>
-                    </fail-widgets>
                 </section>
-
-                <!-- render messages -->
+                <!-- 消息 -->
                 <platform-specific><html><html-template location="${messagesTemplateLocation}"/></html></platform-specific>
                 <container style="contentarea">
                     <!-- may be used by sight disabled persons to skip directly to content area-->

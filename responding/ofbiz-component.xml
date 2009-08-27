@@ -34,6 +34,6 @@
         title="responding"
         server="default-server"
         location="webapp/rspweb"
-        base-permission="OFBTOOLS,RESPONDING"
+        base-permission="NONE"
         mount-point="/rspweb"/>
 </ofbiz-component>
