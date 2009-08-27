@@ -34,7 +34,7 @@
         title="commonapp"
         server="default-server"
         location="webapp/commonapp"
-        base-permission="OFBTOOLS,COMMONAPP"
+        base-permission="NONE"
         app-bar-display="false"
         mount-point="/commonapp"/>
 </ofbiz-component>

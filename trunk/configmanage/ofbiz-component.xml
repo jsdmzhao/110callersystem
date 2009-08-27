@@ -34,6 +34,6 @@
         title="configmanage"
         server="default-server"
         location="webapp/cfgweb"
-        base-permission="OFBTOOLS,CONFIGMANAGE"
+        base-permission="NONE"
         mount-point="/cfgweb"/>
 </ofbiz-component>

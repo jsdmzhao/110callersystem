@@ -34,6 +34,6 @@
         title="用户"
         server="default-server"
         location="webapp/user"
-        base-permission="OFBTOOLS,USERPROFILE"
+        base-permission="NONE"
         mount-point="/user"/>
 </ofbiz-component>

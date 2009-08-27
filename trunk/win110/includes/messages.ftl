@@ -36,20 +36,21 @@ under the License.
 
 <#-- display the error messages -->
 <#if (errorMessage?has_content || errorMessageList?has_content)>
+<div class="errorMessage">&nbsp;</div>
 <script type="text/javascript">
-    Event.observe(window, 'load', function() {
-        humanMsg.displayMsg('<div class="errorMessage"><#if errorMessage?has_content><p>${errorMessage}</p></#if><#if errorMessageList?has_content><#list errorMessageList as errorMsg><p>${errorMsg}</p></#list></#if></p></div>');
-        return false;
+    $(function(){
+        $(".errorMessage").eq(0).html(<#if errorMessage?has_content><p>${errorMessage}</p></#if><#if errorMessageList?has_content><#list errorMessageList as errorMsg><p>${errorMsg}</p></#list></#if></p>);
     });
 </script>
 </#if>
 
 <#-- display the event messages -->
 <#if (eventMessage?has_content || eventMessageList?has_content)>
+<div class="eventMessage">&nbsp;</div>
 <script type="text/javascript">
-    Event.observe(window, 'load', function() {
-        humanMsg.displayMsg('<div class="eventMessage"><#if eventMessage?has_content><p>${eventMessage}</p></#if><#if eventMessageList?has_content><#list eventMessageList as eventMsg><p>${eventMsg}</p></#list></#if></div>');
-        return false;
+    
+    $(function(){
+        $(".eventMessage").eq(0).html(<#if eventMessage?has_content><p>${eventMessage}</p></#if><#if eventMessageList?has_content><#list eventMessageList as eventMsg><p>${eventMsg}</p></#list></#if>);
     });
 </script>
 </#if>
