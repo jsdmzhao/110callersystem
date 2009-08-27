@@ -49,7 +49,7 @@
             <actions>
                  <!-- The default (global) java scripts -->
                 <set field="layoutSettings.javaScripts[+0]" value="/win110/js/jquery/jquery-1.3.2.js" global="true"/>
-                <set field="layoutSettings.javaScripts[+0]" value="/win110/js/jquery/ui/jquery-ui-1.7.2.custom.min.js" global="true"/>
+                <set field="layoutSettings.javaScripts[]" value="/win110/js/jquery/ui/jquery-ui-1.7.2.custom.min.js" global="true"/>
                 <set field="layoutSettings.commonHeaderImageLinkUrl" from-field="layoutSettings.commonHeaderImageLinkUrl" default-value="main" global="true"/>
                 <property-map resource="general" map-name="generalProperties" global="true"/>
                 <set field="defaultVisualThemeId" from-field="generalProperties.defaultVisualThemeId" default-value="SMOOTH_FEATHER"/>
