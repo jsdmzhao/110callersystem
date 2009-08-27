@@ -32,12 +32,14 @@ under the License.
     <#include "scripts.ftl">
 </head>
 <body>
-<div id="wrap">
-  <div id="header">
-    <div id="logo"></div>
-    <div id="controls">
+<div id="wrap" class="ui-widget">
+  <div id="header" class="ui-widget-content">
+        <ul>
+        	<li>
+            	<a href="#">${uiLabelMap.CommonPreferences}</a>
+            </li>
+        </ul>
         <span id="prefBtn">
-            <a href="#">${uiLabelMap.CommonPreferences}</a>
             <div id="preferences">
                 <a href="#" rel="<@ofbizUrl>LookupLocales</@ofbizUrl>" id="language">${uiLabelMap.CommonLanguageTitle} - ${locale.getDisplayName(locale)}</a>
                 <a href="#" rel="<@ofbizUrl>LookupTimezones</@ofbizUrl>" id="timezone">${nowTimestamp?datetime?string.short} - ${timeZone.getDisplayName(timeZone.useDaylightTime(), Static["java.util.TimeZone"].LONG, locale)}</a>
@@ -53,6 +55,7 @@ under the License.
           ${uiLabelMap.CommonWelcome}
         </#if>
         </span>
+        <#if person?has_content>
         <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
-    </div>
+        </#if>
   </div>

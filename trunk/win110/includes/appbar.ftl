@@ -23,11 +23,11 @@ under the License.
 <#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "main")>
 
 <#if displayApps?has_content>
-    <div id="main-nav">
-        <h2 class="contracted">${uiLabelMap.CommonApplications}</h2>
-        <div id="header-nav" class="clearfix" style="display:">
+    <br/>
+    <div id="main-nav" class="ui-widget ui-tabs ui-helper-hidden">
+        <div class="ui-widget-header">${uiLabelMap.CommonApplications}</div>
+        <div id="header-nav" class="ui-widget-content">
             <ul>
-            <h4>${uiLabelMap.CommonPrimaryApps}</h4>
             <#list displayApps as display>
 	            <#assign thisApp = display.getContextRoot()>
 	            <#assign permission = true>
