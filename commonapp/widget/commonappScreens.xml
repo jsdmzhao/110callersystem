@@ -9,6 +9,11 @@
             <widgets>
                 <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
                     <decorator-section name="body">
+                        <platform-specific>
+                            <html>
+                                <html-template location="component://commonapp/webapp/includes/gmap.ftl"/>
+                            </html>
+                        </platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
