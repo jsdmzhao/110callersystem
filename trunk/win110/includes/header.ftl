@@ -59,3 +59,5 @@ under the License.
         <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
         </#if>
   </div>
+  
+  
