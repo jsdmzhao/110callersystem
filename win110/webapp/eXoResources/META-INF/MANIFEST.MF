@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: exo
+Build-Jdk: 1.5.0_09
+Extension-Name: exo.portal.web.eXoResources
+Specification-Title: Provides default project configuration for eXo pr
+ ojects
+Specification-Vendor: eXo Platform SAS
+Implementation-Vendor: eXo Platform SAS
+Implementation-Title: exo.portal.web.eXoResources
+Implementation-Version: 2.5.2
+
