@@ -1,0 +1,51 @@
+/*  
+|
+|	Name:			Leopard
+|	Author:			Nettuts/Harley Alexander
+|	Description:	For a Tutorial at http://nettuts.com/, it's aimed at showing how jQuery and jQuery UI can create a 
+|					leopard style Web Desktop. Although basic, it incompases Dashboard and Windows!
+|
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	color: #005693;
+}
+
+body{
+	background: url(images/background.jpg) no-repeat center top;
+	font: 75%/18px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+
+
+
+.widget{
+	position: relative;
+	z-index: 9999;
+	float: left;
+	
+	list-style: none;
+	opacity:0.5;
+	margin-top:400px;
+	margin-left:400px;
+}
+
+
+#dock{
+	position: fixed;
+	margin: 0 auto;
+	bottom: 36px;
+	left: 37.5%;
+	min-width: 20px;
+	max-width: 400px;
+	z-index: 9999;
+}
+
+#dock img{
+	float: left;
+}
