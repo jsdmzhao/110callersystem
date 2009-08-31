@@ -32,16 +32,61 @@ body > #wrap {height: auto; min-height: 100%;}
     margin: 0;
     width:expression(document.body.clientWidth < 922? "920px" : document.body.clientWidth > 1982? "1980px" : "auto");
 }
-
+li{
+	list-style-type: none;
+	}
 #header{
 	display:block;
+	border: 1px solid #aaaaaa;
+	background-image:url(../images/jinghui-1-80-84.gif);
+	background-repeat: no-repeat;
+	background-position: center;	
+	height: 84px;
+}
+
+.hasBorder{
+	border: 1px solid #aaaaaa;
+	}
+.header-left{
+	display: block;
+	width: 50%;
+	float: left;
+	height: 100%;
+	padding-top: 60px;
 	
+}
+.header-left .appsMenu{
+	width: 80%;
+	height: 24px;
+	padding-top: 0px;
+	
+}
+.header-left .appsMenu ul{
+	width: 100%;
+	padding-top: 0px;
+	display: block;
+	height:100%;
+	}
+.header-left .appsMenu ul li{
+	float: left;
 	
 }
 
-#header span{
+
+.header-right{
+	display: block;
+	width: 460px;
+	float: right;
+	padding-top: 60px;
+}
+
+
+#header .header-right span{
 	float: left;
-	}
+}
+#header .header-right span:first{
+	margin-left: 70px;
+}
 
 #footer {
     background:url(../js/jquery/ui/css/custom-theme/images/ui-bg_glass_65_ffffff_1x400.png) top left repeat-y;
