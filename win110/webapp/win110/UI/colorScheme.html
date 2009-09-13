@@ -1,0 +1,331 @@
+<html><head>
+
+
+	<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+	<title>Color Palette by Color Scheme Generator</title>
+	<meta content="ColorSchemeGenerator.com" name="generator"/>
+
+<style type="text/css">
+
+/* Palette color codes */
+/* Feel free to copy&paste color codes to your application */
+
+.primary-1 { background-color: #FF0000 }
+.primary-2 { background-color: #BF3030 }
+.primary-3 { background-color: #A60000 }
+.primary-4 { background-color: #FF4040 }
+.primary-5 { background-color: #FF7373 }
+
+.complement-1 { background-color: #00CC00 }
+.complement-2 { background-color: #269926 }
+.complement-3 { background-color: #008500 }
+.complement-4 { background-color: #39E639 }
+.complement-5 { background-color: #67E667 }
+
+/* end */
+
+
+body {
+	margin:0; padding: 2em;
+	background:white;
+	color: #666;
+	font: 75%/1.33 Verdana, sans-serif;
+	text-align:left;
+	}
+h1 {
+	margin: 0.5em 0;
+	font-size: 200%;
+	}
+p {
+	margin: 0.5em 0;
+	}
+
+.color-table {
+	margin: 2em 2em 5em;
+	border-collapse:collapse;
+	border:none;
+	border-spacing:0;
+	font-size:100%;
+	}
+.color-table th {
+	padding: 0 1em 0 0;
+	text-align:right;
+	vertical-align: middle;
+	font-size:110%;
+	border: none;
+	}
+.color-table td.sample {
+	width:8em; height:8em;
+	padding: 10px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:90%;
+	border: 1px solid white;
+	}
+.color-table.small td.sample {
+	width:4em; height:4em;
+	padding:0;
+	border:none;
+	}
+.color-table .white { color:white }
+.color-table .black { color:black }
+
+hr {
+	border:none;
+	border-bottom:1px solid silver;
+	}
+#footer {
+	padding:1em;
+	text-align:center;
+	font-size:80%;
+	}
+
+</style>
+
+<style charset="utf-8" type="text/css">/* See license.txt for terms of usage */
+
+#firebugBody {
+    position: fixed;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    width:1px;
+    height:1px;
+    overflow:visible;
+}
+
+.firebugCanvas {
+    position:fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugHighlight {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: #3875d7;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: transparent;
+    border-top: 0 none;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px dashed #BBBBBB;
+    border-left: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugRuler {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugRulerH {
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url(chrome://firebug/skin/rulerH.png) repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url(chrome://firebug/skin/rulerV.png) repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483647;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+/*.firebugHighlightGroup .firebugLayoutBox {
+    background-color: transparent;
+}
+
+.firebugHighlightBox {
+    background-color: Blue !important;
+}*/
+
+.firebugLayoutLine {
+    z-index: 2147483647;
+    background-color: #000000;
+    opacity: 0.4;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutLineLeft,
+.firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop,
+.firebugLayoutLineBottom {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+</style></head><body>
+
+<h1>Color Palette by Color Scheme Designer</h1>
+<p>Palette URL: <a href="http://colorschemedesigner.com/#0021Tw0w0w0w0">http://colorschemedesigner.com/#0021Tw0w0w0w0</a></p>
+
+<table class="color-table">
+	<tbody><tr>
+		<th>Primary Color:</th>
+		<td class="sample primary-1">
+			<div class="white">FF0000</div>
+			<div class="black">FF0000</div>
+		</td>
+		<td class="sample primary-2">
+			<div class="white">BF3030</div>
+			<div class="black">BF3030</div>
+		</td>
+		<td class="sample primary-3">
+			<div class="white">A60000</div>
+			<div class="black">A60000</div>
+		</td>
+		<td class="sample primary-4">
+			<div class="white">FF4040</div>
+			<div class="black">FF4040</div>
+		</td>
+		<td class="sample primary-5">
+			<div class="white">FF7373</div>
+			<div class="black">FF7373</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Complementary Color:</th>
+		<td class="sample complement-1">
+			<div class="white">00CC00</div>
+			<div class="black">00CC00</div>
+		</td>
+		<td class="sample complement-2">
+			<div class="white">269926</div>
+			<div class="black">269926</div>
+		</td>
+		<td class="sample complement-3">
+			<div class="white">008500</div>
+			<div class="black">008500</div>
+		</td>
+		<td class="sample complement-4">
+			<div class="white">39E639</div>
+			<div class="black">39E639</div>
+		</td>
+		<td class="sample complement-5">
+			<div class="white">67E667</div>
+			<div class="black">67E667</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<table class="color-table small">
+	<tbody><tr>
+		<th>Primary Color:</th>
+		<td class="sample primary-1"/>
+		<td class="sample primary-2"/>
+		<td class="sample primary-3"/>
+		<td class="sample primary-4"/>
+		<td class="sample primary-5"/>
+	</tr>
+	<tr>
+		<th>Complementary Color:</th>
+		<td class="sample complement-1"/>
+		<td class="sample complement-2"/>
+		<td class="sample complement-3"/>
+		<td class="sample complement-4"/>
+		<td class="sample complement-5"/>
+	</tr>
+</tbody></table>
+
+<p>
+See the HTML source for more details.<br/>
+Use the <em>Save / Save As...</em> command in your browser to store the HTML for latter use.
+</p>
+
+<hr/>
+
+<p id="footer">Generated by <a href="http://colorschemedesigner.com">Color Scheme Designer</a> © Petr Stanicek 2002-2009</p>
+
+</body></html>

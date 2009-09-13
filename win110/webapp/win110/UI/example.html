@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>layout example</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+        <link rel="stylesheet" href="css/text-styles.css">
+        <link rel="stylesheet" href="css/color-scheme.css">
+        <script type="text/javascript" src="jquery.js">
+        </script>
+        <script type="text/javascript" src="jquery.layout.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('body').layout({
+                    applyDefaultStyles: true
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="ui-layout-center">
+            center
+            <p>
+                <a href="http://layout.jquery-dev.net/demos.html">go to the demos page中午</a>
+            </p>
+            <p>
+                * pane-resizing is disabled because ui.draggable.js is not linked
+            </p>
+            <p>
+                * pane-animation is disabled because ui.effects.js is not linked
+            </p>
+        </div>
+        <div class="ui-layout-north">
+            north
+        </div>
+        <div class="ui-layout-south">
+            south
+        </div>
+        <div class="ui-layout-east">
+            east
+        </div>
+        <div class="ui-layout-west">
+            west
+        </div>
+    </body>
+</html>
