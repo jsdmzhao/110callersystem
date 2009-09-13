@@ -1,0 +1,63 @@
+body {
+}
+ html *{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.42em;
+}
+
+H1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: normal;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+}
+
+H2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.4em;
+}
+
+H3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.5em;
+}
+
+H4 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.45em;
+}
+.primary-1 { background-color: #FF0000 }
+.primary-2 { background-color: #BF3030 }
+.primary-3 { background-color: #A60000 }
+.primary-4 { background-color: #FF4040 }
+.primary-5 { background-color: #FF7373 }
+
+.complement-1 { background-color: #00CC00 }
+.complement-2 { background-color: #269926 }
+.complement-3 { background-color: #008500 }
+.complement-4 { background-color: #39E639 }
+.complement-5 { background-color: #67E667 }
+
