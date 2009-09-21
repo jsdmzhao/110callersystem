@@ -15,4 +15,20 @@
         <value xml:lang="en">You are not allowed to view this page.</value>
         <value xml:lang="zh"></value>
     </property>
+    <property key="userprofile">
+        <value xml:lang="zh">用户信息</value>
+        <value xml:lang="en">profile</value>
+    </property>
+    <property key="responding">
+        <value xml:lang="zh">接警台</value>
+        <value xml:lang="en">responding</value>
+    </property>
+    <property key="dispatching">
+        <value xml:lang="zh">处警台</value>
+        <value xml:lang="en">dispatching</value>
+    </property>
+    <property key="configmanage">
+        <value xml:lang="zh">配置管理</value>
+        <value xml:lang="en">config manage</value>
+    </property>
 </resource>
