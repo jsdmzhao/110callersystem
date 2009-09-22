@@ -4,5 +4,8 @@
     <description>commonapp Services</description>
     <vendor></vendor>
     <version>1.0</version>
-
+	<service name="entityCreate"  engine="entity-auto" default-entity-name="" invoke="create">
+	
+	</service>
+	<service name="entityList" location="" engine="groovy"></service>
 </services>
