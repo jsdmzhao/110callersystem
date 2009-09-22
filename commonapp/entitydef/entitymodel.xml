@@ -6,8 +6,20 @@
     <!-- ========================================================= -->
     <title>Entity of commonapp Component</title>
     <description>None</description>
-    <copyright></copyright>
+    <copyright>EL</copyright>
     <author>None</author>
-    <version></version>
-
+    <version>1.0</version>
+	<entity entity-name="Person" package-name="com.easylink.commonapp">
+	    <field name="userid" type="id-ne"></field>
+		<field name="loginName" type="id-ne"></field>
+		<field name="password" type="id-long-ne"></field>
+		<field name="home" type="url"></field>
+		<field name="email" type="email"></field>
+		<field name="firstName" type="name"></field>
+		<field name="lastName" type="name"></field>
+	    <prim-key field="userid"/>
+	</entity>
+	<extend-entity entity-name="Person">
+		<field name="phoneNo" type="value"></field>
+	</extend-entity>
 </entitymodel>
