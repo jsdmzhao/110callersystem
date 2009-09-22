@@ -5,6 +5,7 @@
     <screen name="main">
         <section>
             <actions>
+            	<script location="component://commonapp/webapp/"/>
             </actions>
             <widgets>
                 <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
