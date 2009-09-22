@@ -133,7 +133,7 @@ public class Entity2CodeContainer implements Container {
 		}
 	}
 
-	private void generateHtml(List<ModelEntity> entities) {
+	private void generateHtml(List<ModelEntity> entities) throws ContainerException {
 
 		for(ModelEntity entity : entities){
 			generateCreate(entity);
@@ -144,24 +144,67 @@ public class Entity2CodeContainer implements Container {
 			
 	}
 
-	private void generateUpdate(ModelEntity entity) {
-		// TODO Auto-generated method stub
+	private void generateUpdate(ModelEntity entity) throws ContainerException {
+		File template=getHTMLTemplate("update");
+		Map<String,Object> data=createEntityModelData(entity);
+		
+		Map<String,Object> component=FastMap.newInstance();
+		data.put("component", component);
+		component.put("name",getComponentName());
+
+		Map<String,Object> resource=FastMap.newInstance();
+		component.put("resource", resource);
+		resource.put("name",getResourceName());
+		
+		generateCode(template, data,TT_FTLHTML); 
+
+	}
+
+	private void generateDetail(ModelEntity entity) throws ContainerException {
+		File template=getHTMLTemplate("detail");
+		Map<String,Object> data=createEntityModelData(entity);
+		
+		Map<String,Object> component=FastMap.newInstance();
+		data.put("component", component);
+		component.put("name",getComponentName());
+
+		Map<String,Object> resource=FastMap.newInstance();
+		component.put("resource", resource);
+		resource.put("name",getResourceName());
+		
+		generateCode(template, data,TT_FTLHTML); 
 		
 	}
 
-	private void generateDetail(ModelEntity entity) {
-		// TODO Auto-generated method stub
+	private void generateList(ModelEntity entity) throws ContainerException {
+		File template=getHTMLTemplate("list");
+		Map<String,Object> data=createEntityModelData(entity);
+		
+		Map<String,Object> component=FastMap.newInstance();
+		data.put("component", component);
+		component.put("name",getComponentName());
+
+		Map<String,Object> resource=FastMap.newInstance();
+		component.put("resource", resource);
+		resource.put("name",getResourceName());
+		
+		generateCode(template, data,TT_FTLHTML); 
 		
 	}
 
-	private void generateList(ModelEntity entity) {
-		// TODO Auto-generated method stub
+	private void generateCreate(ModelEntity entity) throws ContainerException {
+		File template=getHTMLTemplate("create");
+		Map<String,Object> data=createEntityModelData(entity);
 		
-	}
+		Map<String,Object> component=FastMap.newInstance();
+		data.put("component", component);
+		component.put("name",getComponentName());
 
-	private void generateCreate(ModelEntity entity) {
-		// TODO Auto-generated method stub
+		Map<String,Object> resource=FastMap.newInstance();
+		component.put("resource", resource);
+		resource.put("name",getResourceName());
 		
+		generateCode(template, data,TT_FTLHTML); 
 	}
 
 	private void generateServices(List<ModelEntity> entities) throws ContainerException {
@@ -221,6 +264,15 @@ public class Entity2CodeContainer implements Container {
 		fileName+=getComponentName()+"/";
 		fileName+=props.getProperty("com.easylink.code.template.root", "templates")+"/code/";
 		fileName+=props.getProperty("com.easylink.code.template.actions."+action, "Pre"+action+".groovy.ftl");
+		
+		return new File(fileName);
+		
+	}
+	private File getHTMLTemplate(String action) {
+		String fileName=ofbizHome;
+		fileName+=getComponentName()+"/";
+		fileName+=props.getProperty("com.easylink.code.template.root", "templates")+"/code/";
+		fileName+=props.getProperty("com.easylink.code.template.view."+action, action+".ftl");
 		
 		return new File(fileName);
 		
@@ -318,8 +370,8 @@ public class Entity2CodeContainer implements Container {
 	private String createOutputFileName(String entityName,String targetDirectory, File template,
 			int targetType) {
 		String name = template.getName();
-		if (name.endsWith(".ftl") && name.split(".").length > 1) {
-			name = name.substring(0, name.indexOf(".ftl") - 1);
+		if (name.endsWith(".ftl") && name.substring(0, name.indexOf(".ftl")).indexOf(".") >0) {
+			name = name.substring(0, name.indexOf(".ftl"));
 		}
 
 		switch (targetType) {
