@@ -6,7 +6,7 @@
          elements found in the common-controller.xml file. -->
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
 
-    <description>${r"${${entityName}}"} Component Site Configuration File</description>
+    <description>${r"$"}{${component.name}} Component Site Configuration File</description>
     <owner></owner>
 
 
