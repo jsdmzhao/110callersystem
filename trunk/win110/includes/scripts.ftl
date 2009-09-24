@@ -12,5 +12,4 @@
             <script src="<@ofbizContentUrl>${StringUtil.wrapString(javaScript)}</@ofbizContentUrl>" type="text/javascript"></script>
         </#list>
     </#if>
-    <script src="http://maps.google.com/maps?file=api&p;v=2&sensor=false&key=ABQIAAAA6NLnqPmHhND2O0p7edIxbRSoiaIPZq4L_vUGIsCrvM4gdoBv4hQomk-ElXdS58Tx0FhaQ5KDcSmRnQ" type="text/javascript"></script>
     

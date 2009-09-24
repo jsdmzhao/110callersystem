@@ -23,11 +23,7 @@ under the License.
 <#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "main")>
 
 <#if displayApps?has_content>
-    <br/>
-    <div id="main-nav" class="ui-widget ui-tabs ui-helper-hidden">
-        <div class="ui-widget-header">${uiLabelMap.CommonApplications}</div>
-        <div id="header-nav" class="ui-widget-content">
-            <ul>
+            <ul class="hasBorder">
             <#list displayApps as display>
 	            <#assign thisApp = display.getContextRoot()>
 	            <#assign permission = true>
@@ -45,15 +41,12 @@ under the License.
 		            </#if>
 		            <#assign thisURL = thisApp>
 		            <#if thisApp != "/">
-		              <#assign thisURL = thisURL + "/control/main">
+		              <#assign thisURL = thisURL + "/control/appMenu">
 		            </#if>
-		              <li><a href="${thisURL + externalKeyParam}" <#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
+		              <li>|<a href="${thisURL + externalKeyParam}" <#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
 		       </#if>
         	</#list>
             </ul>
-            <#include "secondary-appbar.ftl" />
-        </div>
-    </div>
 </#if>
 
             

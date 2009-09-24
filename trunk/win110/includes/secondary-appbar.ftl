@@ -25,7 +25,7 @@ under the License.
 <#assign displayApps = Static["org.ofbiz.base.component.ComponentConfig"].getAppBarWebInfos(ofbizServerName, "secondary")>
 
 <#if displayApps?has_content>
-  <h4>${uiLabelMap.CommonSecondaryApps}</h4>
+  <div>${uiLabelMap.CommonSecondaryApps}</div>
   <ul>
     <#list displayApps as display>
       <#assign thisApp = display.getContextRoot()>

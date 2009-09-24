@@ -32,32 +32,27 @@ under the License.
     <#include "scripts.ftl">
 </head>
 <body>
-<div id="wrap" class="ui-widget">
-  <div id="header" class="ui-widget-content">
-        <ul>
-        	<li>
-            	<a href="#">${uiLabelMap.CommonPreferences}</a>
-            </li>
-        </ul>
-        <span id="prefBtn">
-            <div id="preferences">
-                <a href="#" rel="<@ofbizUrl>LookupLocales</@ofbizUrl>" id="language">${uiLabelMap.CommonLanguageTitle} - ${locale.getDisplayName(locale)}</a>
-                <a href="#" rel="<@ofbizUrl>LookupTimezones</@ofbizUrl>" id="timezone">${nowTimestamp?datetime?string.short} - ${timeZone.getDisplayName(timeZone.useDaylightTime(), Static["java.util.TimeZone"].LONG, locale)}</a>
-                <a href="#" rel="<@ofbizUrl>LookupVisualThemes</@ofbizUrl>" id="theme">${uiLabelMap.CommonVisualThemes}</a>
-            </div>
-        </span>
-        <span>
-        <#if person?has_content>
-          ${uiLabelMap.CommonWelcome},  ${person.firstName?if_exists} ${person.lastName?if_exists} ( ${userLogin.userLoginId} )
-        <#elseif partyGroup?has_content>
-          ${uiLabelMap.CommonWelcome},  ${partyGroup.groupName?if_exists} ( ${userLogin.userLoginId} )
-        <#else>
-          ${uiLabelMap.CommonWelcome}
-        </#if>
-        </span>
-        <#if person?has_content>
-        <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
-        </#if>
+<div id="wrap">
+  <div id="header">
+        <div class="header-left">
+        	<div class="appsMenu">
+        		<#include "appbar.ftl"/>
+        	</div>
+        </div>
+        <div class="header-right">
+	        <span>
+	        <#if person?has_content>
+	          ${uiLabelMap.CommonWelcome},  ${person.firstName?if_exists} ${person.lastName?if_exists} ( ${userLogin.userLoginId} )
+	        <#elseif partyGroup?has_content>
+	          ${uiLabelMap.CommonWelcome},  ${partyGroup.groupName?if_exists} ( ${userLogin.userLoginId} )
+	        <#else>
+	          ${uiLabelMap.CommonWelcome}
+	        </#if>
+	        </span>
+	        <#if person?has_content>
+	        <span><a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a></span>
+	        </#if>
+        </div>
   </div>
   
   
