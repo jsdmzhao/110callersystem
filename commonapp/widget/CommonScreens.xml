@@ -7,7 +7,6 @@
             <actions>
                 <property-map resource="commonappUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.commonappCompanyName" global="true"/>
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.commonappCompanySubtitle" global="true"/>
 
@@ -68,7 +67,6 @@
                 <!-- render header -->
                 <platform-specific><html><html-template location="${headerTemplateLocation}"/></html></platform-specific>
                 <!-- render appbar -->
-                <platform-specific><html><html-template location="${appbarTemplateLocation}"/></html></platform-specific>
 
                 <!-- render appheader: both menu widget style and ftl template style menus are supported-->
                 <section>
@@ -88,8 +86,6 @@
                     </widgets>
                 </section>
                 <!-- 消息 -->
-                <platform-specific><html><html-template location="${messagesTemplateLocation}"/></html></platform-specific>
-                <include-screen name="${leftbarScreenName}" location="${leftbarScreenLocation}"/>
                 <decorator-section-include name="body"/>
                 <!-- render footer -->
                 <section>
