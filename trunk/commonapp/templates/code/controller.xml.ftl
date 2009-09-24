@@ -24,14 +24,20 @@
 
     <!-- Request Mappings -->
     <#list entityNames as name>
-    	<request-map uri="${name}Create"><security https="false" auth="false"/>
+    	<request-map uri="${name}PreCreate"><security https="false" auth="false"/>
     		<response name="success" type="view" value="${name}Create"/>
+    	</request-map>
+    	<request-map uri="${name}Create"><security https="false" auth="false"/>
+    		<response name="success" type="view" value="${name}Detail"/>
     	</request-map>
     	<request-map uri="${name}List"><security https="false" auth="false"/>
     		<response name="success" type="view" value="${name}List"/>
     	</request-map>
-    	<request-map uri="${name}Update"><security https="false" auth="false"/>
+    	<request-map uri="${name}PreUpdate"><security https="false" auth="false"/>
     		<response name="success" type="view" value="${name}Update"/>
+    	</request-map>
+    	<request-map uri="${name}Update"><security https="false" auth="false"/>
+    		<response name="success" type="view" value="${name}Detail"/>
     	</request-map>
     	<request-map uri="${name}Delete"><security https="false" auth="false"/>
     		<response name="success" type="view" value="${name}List"/>

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
-
-    <screen name="main">
+    <screen name="PersonCreate">
         <section>
             <actions>
-            	<script location="component://commonapp/webapp/"/>
+            	<script location="component://commonapp/webapp/commonapp/WEB-INF/actions/PersonPreCreate.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
                     <decorator-section name="body">
-                        <platform-specific>
+                    	 <platform-specific>
                             <html>
-                                <html-template location="component://commonapp/webapp/includes/gmap.ftl"/>
+                                <html-template location="component://commonapp/webapp/includes/PersonCreate.ftl"/>
                             </html>
                         </platform-specific>
                     </decorator-section>
@@ -20,5 +19,58 @@
             </widgets>
         </section>
     </screen>
-
+    <screen name="PersonUpdate">
+        <section>
+            <actions>
+            	<script location="component://commonapp/webapp/commonapp/WEB-INF/actions/PersonPreUpdate.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                    	 <platform-specific>
+                            <html>
+                                <html-template location="component://commonapp/webapp/includes/PersonUpdate.ftl"/>
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="PersonList">
+        <section>
+            <actions>
+            	<script location="component://commonapp/webapp/commonapp/WEB-INF/actions/PersonPreList.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                    	 <platform-specific>
+                            <html>
+                                <html-template location="component://commonapp/webapp/includes/PersonList.ftl"/>
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="PersonDetail">
+        <section>
+            <actions>
+            	<script location="component://commonapp/webapp/commonapp/WEB-INF/actions/PersonPreDetail.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="commonappCommonDecorator" location="component://commonapp/widget/CommonScreens.xml">
+                    <decorator-section name="body">
+                    	 <platform-specific>
+                            <html>
+                                <html-template location="component://commonapp/webapp/includes/PersonDetail.ftl"/>
+                            </html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 </screens>

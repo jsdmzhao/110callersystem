@@ -6,7 +6,7 @@
 			<input type="hidden" name="${field.name}" value='${r"$"}{${name}.${field.name}}'/>
 	    <#else>
 			<div>
-				<span>${r"$"}{uiLabels.${field.name}}</span>
+				<span>${r"$"}{uiLabelMap.${field.name}}</span>
 				<span  name="${field.name}">
 					${r"$"}{record.${field.name}}
 				</span>
@@ -15,6 +15,6 @@
 	</#list>
 	</${r"#"}list>
 	<div>
-		<input type="submit" value="${r"$"}{uiLabels.update}" />
+		<input type="submit" value="${r"$"}{uiLabelMap.update}" />
 	</div>
 </form>
